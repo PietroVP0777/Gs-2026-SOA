@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: transitoclaro
+  datasource:
+    # H2 em arquivo por padrao; para PostgreSQL: jdbc:postgresql://localhost:5432/transitoclaro
+    url: ${DATABASE_URL:jdbc:h2:file:./data/transitoclaro}
+    username: ${DATABASE_USER:sa}
+    password: ${DATABASE_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate      # o schema e criado pelo Flyway; o Hibernate so confere
+  flyway:
+    enabled: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+springdoc:
+  swagger-ui:
+    path: /docs
