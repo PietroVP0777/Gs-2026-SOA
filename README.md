@@ -19,12 +19,10 @@ Projeto **independente**: um único backend com seu próprio banco, que expõe u
 | Campo | Resposta |
 |-------|----------|
 | **Nome da CitizenTech** | TransitoClaro |
-| **Cidade e bairro** | _São Paulo – (preencher)_ |
 | **Cidadão beneficiado** | Passageiro que depende de metrô, trem ou BRT e precisa decidir a rota sem saber o que acontece nas linhas |
 | **Problema, em uma frase** | Quem depende do transporte público perde horas porque não sabe, antes de sair, quais linhas estão atrasadas ou lotadas. |
 | **Como funciona** | Os próprios passageiros enviam relatos anônimos (atraso, lotação, falha). A API reúne os relatos da última hora e devolve, para cada linha, um status simples (**NORMAL / MODERADO / CRITICO**). O passageiro também cadastra seus trajetos e, ao verificar, recebe um alerta: *pode sair / saia antes / evite*. |
 | **O que cada parte faz** | **SOA (este repo):** API de linhas, relatos, status e trajetos/alertas · demais disciplinas constroem as outras partes da mesma solução (app, IoT, ML etc.) |
-| **Link do repositório** | _colar link do GitHub_ |
 | **Indicador de impacto** | Nº de relatos por período e linhas com mais atrasos (`GET /relatos/estatisticas`); nº de alertas Crítico/Moderado emitidos por trajeto |
 | **ODS conectados** | **ODS 11** (cidades e comunidades sustentáveis – transporte público), **ODS 9** (inovação e infraestrutura), **ODS 10** (redução das desigualdades – informação para quem mais depende do transporte) |
 
@@ -126,7 +124,6 @@ POST /trajetos/1/verificar
 Nenhum dado pessoal: relatos são anônimos e o passageiro usa só um `apelido` livre. As linhas iniciais são dados de exemplo; confira com as fontes oficiais (Metrô SP, CPTM/ViaMobilidade, SPTrans) antes de qualquer uso real.
 
 ## Evidências de funcionamento
-> Substituir pelos prints reais da equipe.
 
 1. Aplicação subindo com as migrações Flyway aplicadas — ![img.png](img.png)_print do log_
 2. Swagger (`/docs`) com os endpoints — ![img_1.png](img_1.png)
